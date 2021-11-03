@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 /**************************************
- * Name:
- * Date:
+ * Name:Brennan Collins
+ * Date:11/2/2021
  * Description: A program using user-created method
  *              for the math function Square and Cube
  * Assistance:
@@ -17,38 +17,47 @@ using System.Windows.Forms;
 
 namespace Exponents
 {
-    public partial class Form1 : Form
+    public partial class Exponents : Form
     {
-        public Form1()
+        public Exponents()
         {
             InitializeComponent();
         }
 
-        private void xGoButton_Click(object sender, EventArgs e)
+        private void UxGoButton_Click(object sender, EventArgs e)
         {
             // STORAGE
             int num; // square, cube;
 
             // INPUT
-            num = Convert.ToInt32(xInputTextBox.Text);
+            num = Convert.ToInt32(UxInputTextBox.Text);
 
             // PROCESS
             /* calculate the square of the number and add it to the output - 
              * do this with a method call that allows you to pass the number
              * and then receive the answer */
             //square = num * num;
-            xOutputLabel.Text = String.Format("Square = {0}", Square(num));
-
+            void Square_method()
+            {
+                UxOutputLabel.Text = String.Format("Square = {0}", Square(num));
+            }
             /* calculate the cube of the number and add it to the output - 
              * do this by creating a methd as in the squaring example above */
             //cube = num * num * num;
-            xOutputLabel.Text += String.Format("\nCube = {0}", Cube(num));
-
+            
+            void Cube_method()
+            {
+                UxOutputLabel.Text += String.Format("\nCube = {0}", Cube(num));
+            }
             // OUTPUT
+            Square_method();
+            Cube_method();
+
             // set the output to visible
-            xOutputLabel.Visible = true;
+            UxOutputLabel.Visible = true;
 
             // turn the Go button off
+            UxGoButton.Enabled = false;
         }
 
         public int Square(int num)
@@ -61,12 +70,17 @@ namespace Exponents
             return num * num * num; // we will create this code in class
         }
 
-        private void xResetButton_Click(object sender, EventArgs e)
+        private void UxResetButton_Click(object sender, EventArgs e)
         {
             // the input and output text should be emptied
             // turn the output to invisible
             // turn the Go button back on
-        }
+            ResetText();
+            UxOutputLabel.Visible = false;
+            UxGoButton.Enabled = true;
+
+            
+                }
 
     }
 }
