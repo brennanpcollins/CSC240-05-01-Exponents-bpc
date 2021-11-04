@@ -37,10 +37,12 @@ namespace Exponents
              * do this with a method call that allows you to pass the number
              * and then receive the answer */
             //square = num * num;
+
             void Square_method()
             {
                 UxOutputLabel.Text = String.Format("Square = {0}", Square(num));
             }
+
             /* calculate the cube of the number and add it to the output - 
              * do this by creating a methd as in the squaring example above */
             //cube = num * num * num;
@@ -49,6 +51,7 @@ namespace Exponents
             {
                 UxOutputLabel.Text += String.Format("\nCube = {0}", Cube(num));
             }
+
             // OUTPUT
             Square_method();
             Cube_method();
@@ -78,9 +81,6 @@ namespace Exponents
             ResetText();
             UxOutputLabel.Visible = false;
             UxGoButton.Enabled = true;
-
-            
                 }
-
     }
 }
